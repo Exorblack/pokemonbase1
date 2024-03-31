@@ -12,7 +12,7 @@ interface pokespropslist{
 
 function pokegrid({pokelist,image}:pokespropslist) {
 
-    const [search,setsearch] = useState("")
+    const [search,setsearch] = useState("string")
 
     const searchfilter = (pokelista: any) =>{
       return pokelista.filter(
