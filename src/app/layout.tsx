@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+          >
+            <div className="flex flex-col text-xl gap-6 px-10 pt-5">
+            <Link href={"/pokemon"} className="hover:text-red-500">=Back</Link>
+            <Link href={"/"} className="hover:text-green-500">=hOME</Link>
+            </div>
+        {children}
+
+      </ThemeProvider>
+      </body> 
     </html>
   );
 }
