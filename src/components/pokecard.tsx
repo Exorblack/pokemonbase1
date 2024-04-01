@@ -1,47 +1,46 @@
-import { useState, useEffect } from 'react';
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card";
 import Link from "next/link";
 import Pokeimage from "./pokeimage";
-import { getpoke, PokeData } from "@/lib/pokeapi"; // Import PokeData type from pokeapi module
+import { getpoke , PokeData } from "@/lib/pokeapi";
+import { useEffect, useState } from "react";
 
 interface pokeprop {
-  name: string;
+  name : string;
   image: string;
 }
-
-const Pokecard: React.FC<pokeprop> = ({ name, image }) => {
-  const [pokeData, setPokeData] = useState<PokeData | null>(null);
+function Pokecard ({ name, image }:  pokeprop) {
+  const [pokeData, setPokeData] = useState<PokeData | null> (null);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const data: PokeData = await getpoke(name); // Specify return type as PokeData
+        const data:PokeData = await getpoke(name);
         setPokeData(data);
-      } catch (error) {
-        console.error('Error fetching Pokemon data:', error);
-      }
+      
     };
 
     fetchData();
   }, [name]);
 
   if (!pokeData) {
-    return <div className='flex justify-center items-center'></div>;
+    return (
+      <div className="flex justify-center items-center"></div>
+    )
   }
+      return (
 
-  return (
-    <main>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 p-6 max-w-lg" key={`${name} card `}>
+      <main>
+
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 p-6 max-w-lg" key={`${name} card `}>
         <Link href={name}>
           <Card className="hover:bg-gray-950">
-            <div className='flex justify-center items-center'>
-              <Pokeimage image={pokeData.sprites.other["official-artwork"].front_default} name={name}/>
+            <div className="flex items-center justify-center">
+          <Pokeimage image={pokeData.sprites.other["official-artwork"].front_default} name={name}/>
             </div>
             <CardHeader>
               <CardTitle>{name.charAt(0).toUpperCase() + name.slice(1)}</CardTitle>
@@ -49,11 +48,13 @@ const Pokecard: React.FC<pokeprop> = ({ name, image }) => {
             <CardContent>
               <p>Click to see {name} Content</p>
             </CardContent>
+
           </Card>
         </Link>
-      </div>
-    </main>
-  );
-}
-
-export default Pokecard;
+        </div>
+      </main>
+    );
+  };
+  
+  export default Pokecard;
+  
