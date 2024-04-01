@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react"
+import React ,{ useState } from "react"
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import Pokecard from "./pokecard";
@@ -10,9 +10,9 @@ interface pokespropslist{
   image:string
 }
 
-function pokegrid({pokelist,image}:pokespropslist) {
+function Pokegrid({pokelist,image}:pokespropslist) {
 
-    const [search,setsearch] = useState("")
+    const [search,setSearch] = useState("")
 
     const searchfilter = (pokelista: any) =>{
       return pokelista.filter(
@@ -34,7 +34,7 @@ function pokegrid({pokelist,image}:pokespropslist) {
           type="text"
           value={search}
           id="PokemonName"
-          onChange={(e)=>setsearch(e.target.value)}
+          onChange={(e)=>setSearch(e.target.value)}
           autoComplete="off"
           >
           </Input>
@@ -52,4 +52,4 @@ function pokegrid({pokelist,image}:pokespropslist) {
   )
 }
 
-export default pokegrid
+export default Pokegrid

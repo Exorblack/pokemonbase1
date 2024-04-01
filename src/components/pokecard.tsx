@@ -26,7 +26,7 @@ function pokecard ({ name, image }:  pokeprop) {
               <CardTitle>{name.charAt(0).toUpperCase() + name.slice(1)}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Click to see Card Content</p>
+              <p>Click to see {name} Content</p>
             </CardContent>
 
           </Card>
