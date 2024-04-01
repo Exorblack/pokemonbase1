@@ -6,13 +6,13 @@ interface ok  {
   image:string
 }
 
-const pokemon = async ({image}: ok) => {
+const pokemon = async ({name}: ok) => {
     const pokemonlist = await pokelist();
 
 
   return (
     <>
-    <Pokegrid pokelist={pokemonlist} image ={image} />
+    <Pokegrid pokelist={pokemonlist} image ={name} />
     </>
 
   )
