@@ -1,29 +1,23 @@
-"use client"
-import { useEffect, useState } from 'react';
+import Pokecard from "@/components/pokecard";
 import Pokegrid from "@/components/pokegrid";
-import pokelist, { PokeData } from "@/lib/pokeapi";
+import pokelist, { getpoke } from "@/lib/pokeapi";
+import pokemonpage from "../[pokemonname]/page"
 
-const Pokemon = () => {
-  const [pokemonList, setPokemonList] = useState<PokeData[]>([]);
+interface ok {
+  name:string
+  image:string
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await pokelist();
-        setPokemonList(data);
-      } catch (error) {
-        console.error('Error fetching Pokemon list:', error);
-      }
-    };
+const pokemon = async ({name,image}: ok) => {
+    const pokemonlist = await pokelist();
 
-    fetchData();
-  }, []);
 
   return (
     <>
-      <Pokegrid pokelist={pokemonList} image={""} />
+    <Pokegrid pokelist={pokemonlist} image ={image} />
     </>
-  );
-};
 
-export default Pokemon;
+  )
+}
+
+export default pokemon
