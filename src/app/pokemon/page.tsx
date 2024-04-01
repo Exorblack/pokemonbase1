@@ -1,10 +1,10 @@
 "use client"
 import { useEffect, useState } from 'react';
 import Pokegrid from "@/components/pokegrid";
-import pokelist from "@/lib/pokeapi";
+import pokelist, { PokeData } from "@/lib/pokeapi";
 
 const Pokemon = () => {
-  const [pokemonList, setPokemonList] = useState<any[]>([]); // Assuming the shape of pokemonList is an array
+  const [pokemonList, setPokemonList] = useState<PokeData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
