@@ -1,10 +1,8 @@
-import Pokecard from "@/components/pokecard";
 import Pokegrid from "@/components/pokegrid";
-import pokelist, { getpoke } from "@/lib/pokeapi";
-import pokemonpage from "../[pokemonname]/page"
+import pokelist from "@/lib/pokeapi";
 
-interface ok {
-  name:string
+interface ok extends React.FC {
+  //name:string
   image:string
 }
 
