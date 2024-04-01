@@ -3,12 +3,12 @@ import Pokegrid from "@/components/pokegrid";
 import pokelist, { getpoke } from "@/lib/pokeapi";
 import pokemonpage from "../[pokemonname]/page"
 
-//interface ok {
+interface ok {
   //name:string
-  //image:string
-//}
+  image:string
+}
 
-const pokemon = async (image: string) => {
+const pokemon = async ({image}: ok) => {
     const pokemonlist = await pokelist();
 
 
