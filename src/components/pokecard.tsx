@@ -14,7 +14,7 @@ interface pokeprop {
   name : string;
   image: string;
 }
-function pokecard ({ name, image }:  pokeprop) {
+function Pokecard ({ name, image }:  pokeprop) {
   const [pokeData, setPokeData] = useState<PokeData | null> (null);
 
   useEffect(() => {
@@ -56,5 +56,5 @@ function pokecard ({ name, image }:  pokeprop) {
     );
   };
   
-  export default pokecard;
+  export default Pokecard;
   
