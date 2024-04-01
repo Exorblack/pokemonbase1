@@ -4,11 +4,11 @@ import pokelist, { getpoke } from "@/lib/pokeapi";
 import pokemonpage from "../[pokemonname]/page"
 
 interface ok {
-  //name:string
+  name:string
   image:string
 }
 
-async function pokemon({image}: ok) {
+const pokemon = async ({image}: ok) => {
     const pokemonlist = await pokelist();
 
 

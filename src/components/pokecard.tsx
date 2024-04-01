@@ -7,7 +7,7 @@ import {
   } from "@/components/ui/card";
 import Link from "next/link";
 import Pokeimage from "./pokeimage";
-import { getpoke , PokeData } from "@/lib/pokeapi";
+import { getpoke } from "@/lib/pokeapi";
 import { useEffect, useState } from "react";
 
 interface pokeprop {
@@ -15,11 +15,11 @@ interface pokeprop {
   image: string;
 }
 function Pokecard ({ name, image }:  pokeprop) {
-  const [pokeData, setPokeData] = useState<PokeData | null> (null);
+  const [pokeData, setPokeData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-        const data:PokeData = await getpoke(name);
+        const data = await getpoke(name);
         setPokeData(data);
       
     };
