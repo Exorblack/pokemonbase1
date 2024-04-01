@@ -1,30 +1,29 @@
-import Pokecard from "@/components/pokecard";
+"use client"
+import { useEffect, useState } from 'react';
 import Pokegrid from "@/components/pokegrid";
-import pokelist, { getpoke } from "@/lib/pokeapi";
-import pokemonpage from "../[pokemonname]/page"
+import pokelist from "@/lib/pokeapi";
 
-interface ok {
-  name:string
-  image:string
-}
+const Pokemon = () => {
+  const [pokemonList, setPokemonList] = useState<any[]>([]); // Assuming the shape of pokemonList is an array
 
-const pokemon = async ({name,image}: ok) => {
-    const pokemonlist = await pokelist();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await pokelist();
+        setPokemonList(data);
+      } catch (error) {
+        console.error('Error fetching Pokemon list:', error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
   return (
     <>
-    <Pokegrid pokelist={pokemonlist} image ={image} />
-        {/*{filteredsearch.map((pokemona:any)=>{
-          return (
-            
-            <Pokecard name={pokemona.name}/>
-            )
-          })}*/}
-    
+      <Pokegrid pokelist={pokemonList} image={""} />
     </>
+  );
+};
 
-  )
-}
-
-export default pokemon
+export default Pokemon;
