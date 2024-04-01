@@ -43,8 +43,7 @@ function Pokegrid({pokelist,image}:pokespropslist) {
       <div className="md:grid md:grid-cols-3 sm:justify-center sm:items-center">
       {filteredsearch.map((pokemona:any)=>{
       return (
-        
-        <Pokecard name={pokemona.name} image={image} key={`${pokemona.name} card`}/>
+          <Pokecard name={pokemona.name} image={image} key={`${pokemona.name} card`}/>
         )
       })}
     </div>
