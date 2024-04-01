@@ -8,7 +8,7 @@ interface ok {
   image:string
 }
 
-const pokemon = async ({image}: ok) => {
+async function pokemon({image}: ok) {
     const pokemonlist = await pokelist();
 
 
