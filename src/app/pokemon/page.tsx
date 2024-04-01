@@ -1,7 +1,7 @@
 import Pokegrid from "@/components/pokegrid";
 import pokelist from "@/lib/pokeapi";
 
-interface ok extends React.FC {
+type ok = {
   //name:string
   image:string
 }
