@@ -12,11 +12,11 @@ interface pokespropslist{
 
 function Pokegrid({pokelist,image}:pokespropslist) {
 
-    const [search,setSearch] = useState("")
+    const [searchText,setSearchText] = useState("");
 
     const searchfilter = (pokelista: any) =>{
       return pokelista.filter(
-        (pokemon:any)=> pokemon.name.toLowerCase().includes(search.toLowerCase())
+        (pokemon:any)=> pokemon.name.toLowerCase().includes(searchText.toLowerCase())
       )
     }
     const filteredsearch = searchfilter(pokelist)
@@ -32,9 +32,9 @@ function Pokegrid({pokelist,image}:pokespropslist) {
           <Input 
           placeholder="ditto, pikachu, etc..."
           type="text"
-          value={search}
+          value={searchText}
           id="PokemonName"
-          onChange={(e)=>setSearch(e.target.value)}
+          onChange={(e)=>setSearchText(e.target.value)}
           autoComplete="off"
           >
           </Input>
