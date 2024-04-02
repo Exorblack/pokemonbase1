@@ -1,7 +1,6 @@
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card";
@@ -12,9 +11,8 @@ import { useEffect, useState } from "react";
 
 interface pokeprop {
   name : string;
-  image: string;
 }
-function Pokecard ({ name, image }:  pokeprop) {
+function Pokecard ({ name }:  pokeprop) {
   const [pokeData, setPokeData] = useState(null);
 
   useEffect(() => {

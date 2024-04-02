@@ -3,7 +3,6 @@ import React ,{ useState } from "react"
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import Pokecard from "./pokecard";
-import Pokeimage from "@/components/pokeimage";
 
 interface pokespropslist{
   pokelist : any
@@ -43,7 +42,7 @@ function Pokegrid({pokelist,image}:pokespropslist) {
       <div className="md:grid md:grid-cols-3 sm:justify-center sm:items-center">
       {filteredsearch.map((pokemona:any)=>{
       return (
-          <Pokecard name={pokemona.name} image={image} key={`${pokemona.name} card`}/>
+          <Pokecard name={pokemona.name} key={`${pokemona.name} card`}/>
         )
       })}
     </div>
