@@ -9,11 +9,21 @@ import Pokeimage from "./pokeimage";
 import { getpoke } from "@/lib/pokeapi";
 import { useEffect, useState } from "react";
 
+interface PokemonData {
+  sprites: {
+    other: {
+      "official-artwork": {
+        front_default: string;
+      };
+    };
+  };
+}
+
 interface pokeprop {
   name : string;
 }
 function Pokecard ({ name }:  pokeprop) {
-  const [pokeData, setPokeData] = useState(null);
+  const [pokeData, setPokeData] = useState<PokemonData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
