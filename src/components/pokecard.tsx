@@ -54,7 +54,7 @@ function Pokecard ({ name }:  pokeprop) {
               <CardTitle>{name.charAt(0).toUpperCase() + name.slice(1)}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Click to see {name} Content</p>
+              <p>Click to see {name} Base stats </p>
             </CardContent>
 
           </Card>

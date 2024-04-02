@@ -24,9 +24,8 @@ function Pokegrid({pokelist}:pokespropslist) {
       
       <div>
 
-         <h3 className="text-2xl text-center py-[50px]">Search Here</h3>
-         <div className="grid w-full max-w-90 items-center justify-center gap-1.5">
-          <Label htmlFor="PokemonName">Pokemon Name</Label>
+         <div className="grid w-full max-w-90 items-center justify-center gap-1.5 pt-20">
+          <Label htmlFor="PokemonName" className="pb-3 text-center">Pokemon Name</Label>
           <Input 
           placeholder="ditto, pikachu, etc..."
           type="text"
