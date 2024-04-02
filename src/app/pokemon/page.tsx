@@ -1,21 +1,20 @@
+import React from "react"; 
 import Pokegrid from "@/components/pokegrid";
 import pokelist from "@/lib/pokeapi";
 
-interface ok  {
-  name:string
-  image:string
+interface PokemonProps { 
+  name: string;
+  image: string;
 }
 
-const pokemon = async ({name}: ok) => {
-    const pokemonlist = await pokelist();
-
+const pokemon: React.FC<PokemonProps> = async ({ name }: PokemonProps) => {
+  const pokemonlist = await pokelist();
 
   return (
     <>
-    <Pokegrid pokelist={pokemonlist} image ={name} />
+      <Pokegrid pokelist={pokemonlist} image={name} /> 
     </>
+  );
+};
 
-  )
-}
-
-export default pokemon
+export default pokemon;
