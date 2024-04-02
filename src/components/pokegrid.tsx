@@ -6,10 +6,9 @@ import Pokecard from "./pokecard";
 
 interface pokespropslist{
   pokelist : any
-  image:string
 }
 
-function Pokegrid({pokelist,image}:pokespropslist) {
+function Pokegrid({pokelist}:pokespropslist) {
 
     const [searchText,setSearchText] = useState("");
 
