@@ -19,6 +19,7 @@ export default async function pokemonpage({params}:{params:{pokemonname:string}}
         <div>
             <h3 className="grid items-center justify-center pt-4"> weight : {pokeobject.weight}</h3>
             <h3 className="grid items-center justify-center pt-4"> height : {pokeobject.height}</h3>
+            <div className="text-center pt-10 font-semibold">Base stats</div>
             <div className="pt-10">
                 {pokeobject.stats.map((statobj:any)=>{
                     const statname = statobj.stat.name

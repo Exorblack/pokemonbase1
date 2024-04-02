@@ -26,7 +26,7 @@ export default function RootLayout({
           >
             <div className="flex flex-wrap text-xl gap-6 px-10 pt-5">
             <Link href={"/"} className="hover:bg-border">Home</Link>
-            <Link href={"/pokemon"} className="hover:bg-border">Back</Link>
+            <Link href={"/pokemon"} className="hover:bg-border">Pokemons</Link>
             </div>
         {children}
 
